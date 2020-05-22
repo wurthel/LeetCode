@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/wurthel/Documents/GitHub/LeetCode/tree/173_BinarySearchTreeIterator/main.cpp
+iostream
+-
+stack
+/Users/wurthel/Documents/GitHub/LeetCode/tree/173_BinarySearchTreeIterator/stack
+
