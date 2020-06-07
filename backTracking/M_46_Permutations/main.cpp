@@ -1,0 +1,47 @@
+#include <iostream>
+#include "algorithm"
+#include "vector"
+
+using namespace std;
+
+class Solution {
+public:
+    vector<vector<int>> permute1(vector<int> &nums) {
+        vector<vector<int>> answer;
+        sort(nums.begin(), nums.end());
+        do {
+            answer.push_back(nums);
+        } while (next_permutation(nums.begin(), nums.end()));
+
+        return answer;
+    }
+
+    void permute2_(vector<vector<int>> &ans, vector<int> &nums, vector<int>::iterator itr, vector<int>::iterator end) {
+        if (itr == end) {
+            ans.push_back(nums);
+            return;
+        }
+
+        for(auto i = itr; i != end; ++i){
+            swap(*itr, *i);
+            permute2_(ans, nums, next(itr), end);
+            swap(*itr, *i);
+        }
+    }
+
+    vector<vector<int>> permute2(vector<int> &nums) {
+        vector<vector<int>> answer;
+        permute2_(answer, nums, nums.begin(), nums.end());
+
+        return answer;
+    }
+
+};
+
+int main() {
+    vector<int> v = {1,2,3};
+    Solution s;
+    s.permute2(v);
+    std::cout << "Hello, World!" << std::endl;
+    return 0;
+}
