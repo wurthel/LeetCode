@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/wurthel/Documents/GitHub/LeetCode/stack/H_224_BasicCalculator/build",
+  "command": "/usr/bin/clang++   -I/usr/local/include  -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk   -std=gnu++14 -o CMakeFiles/H_224_BasicCalculator.dir/main.cpp.o -c /Users/wurthel/Documents/GitHub/LeetCode/stack/H_224_BasicCalculator/main.cpp",
+  "file": "/Users/wurthel/Documents/GitHub/LeetCode/stack/H_224_BasicCalculator/main.cpp"
+}
+]

@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/wurthel/Documents/GitHub/LeetCode/backTracking/M_17_LetterCombinationsOfAPhoneNumber/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk   -std=gnu++14 -o CMakeFiles/M_17_LetterCombinationsOfAPhoneNumber.dir/main.cpp.o -c /Users/wurthel/Documents/GitHub/LeetCode/backTracking/M_17_LetterCombinationsOfAPhoneNumber/main.cpp",
+  "file": "/Users/wurthel/Documents/GitHub/LeetCode/backTracking/M_17_LetterCombinationsOfAPhoneNumber/main.cpp"
+}
+]

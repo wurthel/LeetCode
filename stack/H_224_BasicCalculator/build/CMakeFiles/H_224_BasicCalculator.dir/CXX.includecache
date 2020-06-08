@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/wurthel/Documents/GitHub/LeetCode/stack/H_224_BasicCalculator/main.cpp
+iostream
+-
+stack
+/Users/wurthel/Documents/GitHub/LeetCode/stack/H_224_BasicCalculator/stack
+string
+/Users/wurthel/Documents/GitHub/LeetCode/stack/H_224_BasicCalculator/string
+math.h
+/Users/wurthel/Documents/GitHub/LeetCode/stack/H_224_BasicCalculator/math.h
+boost/any.hpp
+-
+
