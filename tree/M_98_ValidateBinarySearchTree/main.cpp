@@ -24,22 +24,21 @@ struct TreeNode {
 class Solution {
 public:
     bool isValidBST(TreeNode *root) {
-        bool flag = true;
-
-        if (root && root->left) {
-            if (root->val < root->left->val || isValidBST(root->left) == false)
-                flag = false;
-        }
-
-        if (flag && root && root->right) {
-            if (root->val > root->right->val || isValidBST(root->right) == false)
-                flag = false;
-        }
-
-        return flag;
+        return isValidBST_(root, nullptr, nullptr);
     }
 
 private:
+    bool isValidBST_(TreeNode *root, TreeNode *lower_bound, TreeNode *upper_bound) {
+        if (!root)
+            return true;
+
+        if (lower_bound && root->val <= lower_bound->val)
+            return false;
+        if (upper_bound && root->val >= upper_bound->val)
+            return false;
+
+        return isValidBST_(root->left, lower_bound, root) && isValidBST_(root->right, root, upper_bound);
+    }
 
 };
 
