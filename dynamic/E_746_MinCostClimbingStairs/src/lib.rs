@@ -29,6 +29,25 @@ impl Solution {
             }
         }
     }
+
+    pub fn min_cost_climbing_stairs_button_up(cost: Vec<i32>) -> i32 {
+        // Button-up reimplementation of the above solution
+        if cost.len() == 1 {
+            cost[0]
+        } else if cost.len() == 2 {
+            min(cost[1], cost[0])
+        } else {
+            let mut dp = vec![0; cost.len()];
+            dp[0] = cost[0];
+            dp[1] = min(cost[1], cost[0] + cost[1]);
+            for i in 2..cost.len() {
+                let p1 = dp[i - 1];
+                let p2 = dp[i - 2];
+                dp[i] = cost[i] + min(p1, p2);
+            }
+            min(dp[cost.len() - 1], dp[cost.len() - 2])
+        }
+    }
 }
 
 #[cfg(test)]
@@ -42,5 +61,17 @@ mod tests {
 
         let result = Solution::min_cost_climbing_stairs(vec![1,100,1,1,1,100,1,1,100,1]);
         assert_eq!(result, 6);
+
+        let result = Solution::min_cost_climbing_stairs(vec![1,100]);
+        assert_eq!(result, 1);
+
+        let result = Solution::min_cost_climbing_stairs_button_up(vec![10, 15, 20]);
+        assert_eq!(result, 15);
+
+        let result = Solution::min_cost_climbing_stairs_button_up(vec![1,100,1,1,1,100,1,1,100,1]);
+        assert_eq!(result, 6);
+
+        let result = Solution::min_cost_climbing_stairs_button_up(vec![1,100]);
+        assert_eq!(result, 1);
     }
 }

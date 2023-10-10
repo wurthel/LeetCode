@@ -18,10 +18,28 @@ impl Solution {
         } else {
             let val =
                 Solution::_tribonacci(mem, n - 3)
-                + Solution::_tribonacci(mem, n - 2)
-                + Solution::_tribonacci(mem, n - 1);
+                    + Solution::_tribonacci(mem, n - 2)
+                    + Solution::_tribonacci(mem, n - 1);
             mem.insert(n, val);
             val
+        }
+    }
+
+    pub fn tribonacci_button_up(n: i32) -> i32 {
+        // Button-Up reimplementation of the above solution
+        if n == 0 {
+            0
+        } else if n == 1 || n == 2 {
+            1
+        } else {
+            let mut dp = vec![0; n as usize + 1];
+            dp[0] = 0;
+            dp[1] = 1;
+            dp[2] = 1;
+            for i in 3..(n + 1) as usize {
+                dp[i] = dp[i - 3] + dp[i - 2] + dp[i - 1];
+            }
+            dp[n as usize]
         }
     }
 }
@@ -36,6 +54,12 @@ mod tests {
         assert_eq!(result, 4);
 
         let result = Solution::tribonacci(25);
+        assert_eq!(result, 1389537);
+
+        let result = Solution::tribonacci_button_up(4);
+        assert_eq!(result, 4);
+
+        let result = Solution::tribonacci_button_up(25);
         assert_eq!(result, 1389537);
     }
 }
